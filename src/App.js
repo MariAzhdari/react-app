@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useState } from 'react';
+import Product from './component/product/Product';
+const App =(props)=>{
+const[product ,setProduct]=useState({
+    product: [
+      { title: "book1", price: 80 },
+     { title: "book2", price: 60 },
+      { title: "book3", price: 20 },
+    ],
+})
+const changeHandler =()=>{
+  setProduct({   product: [
+      { title: "book1", price: 800 },
+      { title: "book2", price: 600 },
+       { title: "book3", price: 200 },
+    ],})
+}
+      return (
+      <div>
+        <h1>hello dear Mari</h1>
+        <Product
+          title={product.product[0].title}
+          price={product.product[0].price}
+        />
+        <Product
+          title={product.product[1].title}
+          price={product.product[1].price}
+        />
+        <Product
+          title={product.product[2].title}
+          price={product.product[2].price}
+        />
+        <button onClick={changeHandler}>click me</button>
+      </div>
+    );
 }
 
 export default App;
