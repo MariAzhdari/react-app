@@ -14,13 +14,16 @@ const changeHandler =()=>{
       { title: "book2", price: 600 },
        { title: "book3", price: 200 },
     ],})
+
+  
 }
-      return (
-      <div>
-        <h1>hello dear Mari</h1>
+return(
+      <div className='container'>
+        <h1>Mari Book shop</h1>
         <Product
           title={product.product[0].title}
           price={product.product[0].price}
+         
         />
         <Product
           title={product.product[1].title}
@@ -29,8 +32,9 @@ const changeHandler =()=>{
         <Product
           title={product.product[2].title}
           price={product.product[2].price}
+          click={changeHandler}
         />
-        <button onClick={changeHandler}>click me</button>
+        <button style={{backgroundColor:"yellow-green"}} onClick={changeHandler}>click me</button>
       </div>
     );
 }
